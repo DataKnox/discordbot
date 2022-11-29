@@ -12,7 +12,7 @@ const PREFIX = '!';
 const bot = new eris.Client(process.env.ERISKEY);
 
 async function createWI(data: string): Promise<wi.WorkItem> {
-  let orgUrl = "https://dev.azure.com/knoxsdata";
+  let orgUrl = "https://dev.azure.com/" + process.env.ORGNAME;
   let token = process.env.AZUREPAT;
   let authHandler = azdev.getPersonalAccessTokenHandler(token);
   let connection = new azdev.WebApi(orgUrl, authHandler);
